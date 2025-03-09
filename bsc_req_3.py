@@ -19,7 +19,7 @@ file_path = 'clean.csv'
 data = pd.read_csv(file_path)
 
 
-st.title("Football Statistics Information System")
+st.title("23/24 Premier League Shooting Statistics")
 st.write("Select a club and a statistic to display.")
 
 
