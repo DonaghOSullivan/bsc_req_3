@@ -3,9 +3,9 @@
 
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
-import subprocess
+#import subprocess
 
 #process = subprocess.Popen([
 #    "streamlit", "run", "bsc_req_3.py",
