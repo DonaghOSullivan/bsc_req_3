@@ -7,11 +7,11 @@ import matplotlib.pyplot as plt
 
 import subprocess
 
-process = subprocess.Popen([
-    "streamlit", "run", "bsc_req_3.py",
-    "--server.port", "157",
-    "--server.headless", "true"
-])
+#process = subprocess.Popen([
+#    "streamlit", "run", "bsc_req_3.py",
+#    "--server.port", "157",
+#    "--server.headless", "true"
+#])
 
 
 
