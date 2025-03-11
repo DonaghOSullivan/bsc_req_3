@@ -39,29 +39,14 @@ if selected_stat == 'Most Goals':
     st.subheader("Most Goals")
     st.write("Player: " + top_player['Player'] + " - Goals: " + str(top_player['Actual Goals']))
 
-
-
-    plt.figure(figsize=(10, 6))
-    plt.bar(team_data['Player'], team_data['Actual Goals'], color='green')
-    plt.title("Actual Goals by Player")
-    plt.xlabel("Player")
-    plt.ylabel("Actual Goals")
-    plt.xticks(rotation=45)
-    st.pyplot(plt) 
+    st.bar_chart(team_data.set_index('Player')['Actual Goals']) 
 
 elif selected_stat == 'Most Expected Goals':
     top_player = team_data.loc[team_data['Expected Goals (xG)'].idxmax()]
     st.subheader("Most Expected Goals")
     st.write("Player: " + top_player['Player'] + " - Expected Goals: " + str(top_player['Expected Goals (xG)']))
 
-
-    plt.figure(figsize=(10, 6))
-    plt.bar(team_data['Player'], team_data['Expected Goals (xG)'], color='green')
-    plt.title("Expected Goals by Player")
-    plt.xlabel("Player")
-    plt.ylabel("Expected Goals (xG)")
-    plt.xticks(rotation=45)
-    st.pyplot(plt) 
+    st.bar_chart(team_data.set_index('Player')['Expected Goals (xG)'])
 
 elif selected_stat == 'Biggest Difference':
     team_data['Abs Difference'] = team_data['Goal Difference'].abs()
@@ -69,11 +54,4 @@ elif selected_stat == 'Biggest Difference':
     st.subheader("Biggest Difference in Goals")
     st.write("Player: " + top_player['Player'] + " - Goal Difference: " + str(top_player['Goal Difference']))
 
-
-    plt.figure(figsize=(10, 6))
-    plt.bar(team_data['Player'], team_data['Goal Difference'], color='green')
-    plt.title("Goal Difference by Player")
-    plt.xlabel("Player")
-    plt.ylabel("Goal Difference")
-    plt.xticks(rotation=45)
-    st.pyplot(plt) 
+    st.bar_chart(team_data.set_index('Player')['Goal Difference']) 
